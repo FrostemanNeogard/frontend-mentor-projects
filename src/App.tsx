@@ -10,7 +10,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/qrcode" element={<QRCode />} />
-        <Route path="/results_summary" element={<ResultsSummary />} />
+        <Route path="/results-summary" element={<ResultsSummary />} />
       </Routes>
     </div>
   )

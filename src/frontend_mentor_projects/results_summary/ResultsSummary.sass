@@ -1,0 +1,103 @@
+@import 'https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap'
+@import './util/variables'
+
+@mixin result-category-div($color)
+  background-color: hsla(hue($color), saturation($color), lightness($color), .1)
+  .result-category-name
+    color: $color
+
+main.results-summary-container
+  font-family: 'Hanken Grotesk', sans-serif
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  min-height: 100vh
+  background-color: $neutral-white
+
+  .results-summary-component
+    filter: drop-shadow(0 15px 10px rgba(0, 0, 0, 0.1))
+    background-color: $neutral-white
+    overflow: hidden
+    display: grid
+    section
+      padding: 2rem
+      &.result
+        border-radius: inherit
+        text-align: center
+        display: flex
+        flex-direction: column
+        align-items: center
+        background: $main-background
+        > h1
+          font-size: 2em
+          color: $neutral-light-lavender
+        div
+          margin-top: auto
+          margin-bottom: auto
+          display: flex
+          flex-direction: column
+          justify-content: center
+          background: $main-circle-background
+          width: clamp(200px, 20vw, 250px)
+          height: clamp(200px, 20vw, 250px)
+          border-radius: 50%
+          h1
+            margin: -25px 0
+            font-size: 4em
+          p
+            color: $neutral-light-lavender
+        p
+          padding: 0 3em
+          color: $neutral-light-lavender
+
+      &.summary
+        color: $neutral-dark-gray-blue
+        > *
+          margin: 10px 0
+        button
+          background: linear-gradient(to bottom, $neutral-dark-gray-blue, $neutral-dark-gray-blue)
+          color: $neutral-white
+          padding: 1em 5em
+          border-radius: 3em
+          width: 100%
+          border: none
+          transition: background 200ms ease
+          &:hover
+            cursor: pointer
+            background: $main-background
+        div
+          padding: 0.8rem
+          border-radius: 1rem
+          display: flex
+          p.result-category-score
+            margin-left: auto            
+          span
+            color: hsla(hue($neutral-dark-gray-blue), saturation($neutral-dark-gray-blue), lightness($neutral-dark-gray-blue), .5)
+          &#result-category-reaction
+            @include result-category-div($color: $primary-light-red)
+          &#result-category-memory
+            @include result-category-div($color: $primary-orangey-yellow)
+          &#result-category-verbal
+            @include result-category-div($color: $primary-green-teal)
+          &#result-category-visual
+            @include result-category-div($color: $primary-cobalt-blue)
+
+@media screen and (min-width: 901px)
+  .results-summary-component
+    grid-template-columns: repeat(2, 50%)
+    border-radius: 2rem
+
+@media screen and (max-width: 900px)
+  main.results-summary-container
+    padding: 0
+    display: block
+    .results-summary-component
+      grid-template-columns: 1fr
+      border-radius: 0
+      width: 100vw
+      filter: none !important
+      section.result
+        border-radius: 2em
+        border-top-left-radius: 0
+        border-top-right-radius: 0

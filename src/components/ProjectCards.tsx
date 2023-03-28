@@ -1,6 +1,7 @@
 import '../styling/ProjectCards.sass'
 import { Link } from 'react-router-dom'
 import QRCodePreviewImage from '../assets/project_previews/QR_code.png'
+import ResultsSummaryPewviewImage from '../assets/project_previews/ResultsSummary.png'
 
 export default function ProjectCards() {
   
@@ -21,6 +22,12 @@ export default function ProjectCards() {
       description: 'First simple Frontend Mentor challenge. This is a card showing a QR code.',
       url: 'qrcode',
       imageURL: QRCodePreviewImage
+    },
+    {
+      name: 'Results Summary Component',
+      description: 'Another simple Frontend Mentor challenge. This is a card showing a summary from the results of something such as an assessment.',
+      url: 'results-summary',
+      imageURL: ResultsSummaryPewviewImage
     },
   ]
 

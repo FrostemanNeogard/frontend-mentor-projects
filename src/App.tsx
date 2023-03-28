@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import QRCode from './components/qrcode/QRCode'
+import QRCode from './frontend_mentor_projects/qrcode/QRCode'
 import Home from './components/Home'
 
 export default function App() {

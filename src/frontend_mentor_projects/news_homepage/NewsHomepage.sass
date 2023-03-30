@@ -1,0 +1,193 @@
+@import './util/styling/variables'
+@import './util/styling/pre_made_classes'
+
+div.news-homepage-container
+  background-color: $main-background-color
+  min-height: 100vh
+  padding: 0 2em 2em 2em
+  font-size: $font-size
+  font-family: $font-family
+  div.semi-transparent-black-overlay
+    &.active
+      display: block
+    &.hidden
+      display: none
+    position: fixed
+    width: 100vw
+    height: 100vh
+    left: 0
+    top: 0
+    background-color: rgba(0, 0, 0, 0.5)
+    z-index: 10
+  header
+    padding: 2em 0
+    display: flex
+    button
+      margin-left: auto
+      border: none
+      background: none
+    > ul
+      margin-left: auto
+      gap: 0 2em
+      list-style: none
+      display: flex
+      color: $neutral-dark-grayish-blue
+      li:hover
+        cursor: pointer
+        color: $primary-soft-red
+
+  main#news-homepage
+    width: 100%
+    padding: 0
+    background-color: inherit
+    > section
+      display: grid
+      flex-direction: column
+      gap: 4em 0
+      width: 100%
+      .main-news-article
+        display: flex
+        flex-direction: column
+        gap: 1.5em 0
+        img
+          width: 100%
+        div
+          display: grid
+          gap: inherit
+          h1
+            color: $neutral-very-dark-blue
+            line-height: 1.2
+            font-size: 3em
+          p
+            color: $neutral-dark-grayish-blue
+          button
+            border: none
+            background-color: $primary-soft-red
+            color: $neutral-off-white
+            text-transform: uppercase
+            letter-spacing: 0.3em
+            font-weight: 700
+            padding: 1em 2em
+            width: fit-content
+            &:hover
+              cursor: pointer
+              background-color: $neutral-very-dark-blue
+
+      .new-articles-section
+        padding: 1.5em
+        background-color: $neutral-very-dark-blue
+        h1
+          font-size: 2.5em
+          color: $primary-soft-orange
+        section
+          article
+            padding: 2em 0
+            &:not(:last-of-type)
+              border-bottom: 1px solid $neutral-dark-grayish-blue
+            h2
+              color: $neutral-off-white
+            p
+              color: $neutral-grayish-blue
+            &:hover
+              cursor: pointer
+              h2
+                color: $primary-soft-orange
+
+      .mini-articles-section
+        display: flex
+        // flex-direction determined by media queries
+        gap: 2em 0
+        article
+          display: grid
+          grid-template-columns: 28% auto
+          grid-template-rows: repeat(3, auto)
+          gap: 0 1em
+          img
+            margin-right: 2em
+            grid-column: 1
+            grid-row: 1 / span 3
+          h1
+            color: $neutral-grayish-blue
+            font-size: 2em
+          h2
+            color: $neutral-very-dark-blue
+            font-size: 1.3em
+          p
+            color: $neutral-dark-grayish-blue
+          &:hover
+            cursor: pointer
+            h2
+              color: $primary-soft-red
+
+// Desktop settings
+@media screen and (min-width: 1001px)
+  .mobile-only
+    display: none !important
+  div.news-homepage-container
+    padding: 5vw 10vw
+    padding-top: 0
+    main
+      > section
+        display: grid
+        grid-template-columns: 60% auto
+        gap: 5em
+        .main-news-article
+          height: clamp(200px, 100%, 700px)
+          div
+            grid-template-columns: repeat(2, 1fr) !important
+            grid-template-rows: auto !important
+            h1
+              grid-column: 1
+              grid-row: 1 / span 2
+
+        .mini-articles-section
+          justify-content: space-between
+          flex-direction: row 
+          grid-column: 1 / span 2
+
+// Mobile settings
+@media screen and (max-width: 1000px)
+  .desktop-only
+    display: none !important
+  .news-homepage-container
+    position: relative
+  header
+    button:hover
+      cursor: pointer
+  .hamburger-menu
+    &.active
+      transform: none
+    &.hidden
+      transform: translateX(100%)
+    z-index: 20
+    transition: transform 500ms ease
+    display: flex
+    flex-flow: column
+    position: fixed
+    height: 100vh
+    width: 70vw
+    background-color: $main-background-color
+    padding: 2em
+    top: 0
+    margin: 0
+    right: 0
+    button
+      margin-left: auto
+      &:hover
+        cursor: pointer
+    ul
+      margin-top: 4em
+      padding: 0
+      list-style: none
+      display: flex
+      flex-direction: column
+      justify-content: space-evenly
+      gap: 1em
+      font-size: 1.5em
+      li:hover
+        cursor: pointer
+        color: $primary-soft-red
+
+  main#news-homepage
+    .mini-articles-section
+      flex-direction: column

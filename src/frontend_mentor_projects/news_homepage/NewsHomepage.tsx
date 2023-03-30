@@ -8,12 +8,10 @@ export default function NewsHomepage() {
   const [showingMenu, updateShowingMenu] = useState(false)
 
   const rootElement: HTMLBodyElement = document.querySelector('body')!
-  rootElement.setAttribute('style', `overflow: ${showingMenu ? 'hidden' : 'scroll'}`)
+  rootElement.setAttribute('style', `overflow-y: ${showingMenu ? 'hidden' : 'scroll'}`)
 
   return (
-    <div className='news-homepage-container'
-      style={ showingMenu ? { overflow: 'hidden' } : { overflow: 'scroll' }}
-    >
+    <div className='news-homepage-container'>
       <div className={`semi-transparent-black-overlay ${showingMenu ? 'active' : 'hidden'}`}/>
       <header>
         <img src={LogoSVG} alt="Logo" />

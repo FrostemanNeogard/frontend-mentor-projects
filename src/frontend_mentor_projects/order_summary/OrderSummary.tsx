@@ -8,7 +8,7 @@ export default function OrderSummary() {
   return (
     <div className="order-summary-container">
 
-      <picture id="background">
+      <picture id="full-screen-background-image">
         <source 
           srcSet={`${DekstopBackgroundPattern} 2x, ${MobileBackgroundPattern} 1x`}
           media='(max-width: 600px)'

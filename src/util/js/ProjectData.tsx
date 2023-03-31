@@ -2,6 +2,7 @@ import QRCodePreviewImage from '../../assets/project_previews/QR_code.png'
 import ResultsSummaryPewviewImage from '../../assets/project_previews/ResultsSummary.png'
 import NewsHomepage from '../../assets/project_previews/NewsHomepage.png'
 import AdviceGenerator from '../../assets/project_previews/AdviceGenerator.png'
+import OrderSummary from '../../assets/project_previews/OrderSummary.png'
 
 import { ProjectInformation } from './Interfaces'
 
@@ -29,5 +30,11 @@ export const ProjectData: Array<ProjectInformation> = [
     description: 'Another level 2 Frontend Mentor challenge. This uses a very basic API to generate a random piece of advice.',
     url: 'advice-generator',
     imageURL: AdviceGenerator
+  },
+  {
+    name: 'Order Summary',
+    description: 'Possibly the simplest Challenge along with the QR code component. Around an hour worth of work with a simple layout.',
+    url: 'order-summary',
+    imageURL: OrderSummary
   },
 ]

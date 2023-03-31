@@ -1,0 +1,93 @@
+@import './util/variables'
+  
+@mixin horizontally-centered-items
+  display: flex
+  flex-direction: column
+  align-items: center
+
+span.light-font-color
+  color: $neutral-desaturated-blue
+
+div.order-summary-container
+  min-height: 100vh
+  background-color: $primary-pale-blue
+  display: flex
+  flex-direction: column
+
+  #background
+    position: fixed
+    width: 100%
+    height: 50%
+    z-index: 1
+    img
+      width: 100%
+      height: 100%
+
+  main.order-summary
+    z-index: 2
+    position: relative
+    background-color: white
+    width: clamp(300px, 50vw, 600px)
+    margin: auto
+    padding: 0
+    color: $neutral-dark-blue
+    text-align: center
+    font-size: $font-size
+    border-radius: 1em
+    overflow: hidden
+
+    h1
+      font-size: 1.5em
+      margin-top: 0.5em
+
+    img
+      width: 100%
+
+    div.padded-container
+      padding: 2.5em
+      @include horizontally-centered-items
+      gap: 1em
+
+      div.plan-details
+        padding: 1em
+        border-radius: 1em
+        background-color: $neutral-very-pale-blue
+        display: grid
+        align-items: center
+        grid-template-columns: auto auto 1fr
+        gap: 0 1.5em
+        width: 100%
+        p.anchor-styling
+          justify-self: flex-end
+          color: $primary-bright-blue
+          font-weight: 700
+          text-decoration: underline
+          &:hover
+            cursor: pointer
+            color: rgba($primary-bright-blue, 0.5)
+
+      button
+        width: 100%
+        border-radius: 1em
+        padding: 1em 0
+        font-weight: 700
+        border: none
+        &.confirm-button
+          color: white
+          background-color: $primary-bright-blue
+          filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.3))
+          &:hover
+            cursor: pointer
+            background-color: rgba($primary-bright-blue, 0.5)
+        &.cancel-button
+          color: $neutral-desaturated-blue
+          background: none
+          &:hover
+            cursor: pointer
+            color: $neutral-dark-blue
+
+@media screen and (max-width: 600px)
+  main.order-summary
+    width: 90vw !important
+    div.padded-container
+      padding: 1.5em !important

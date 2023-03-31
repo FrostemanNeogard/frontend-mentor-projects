@@ -5,6 +5,7 @@ import ResultsSummary from './frontend_mentor_projects/results_summary/ResultsSu
 import Home from './components/Home'
 import NewsHomepage from './frontend_mentor_projects/news_homepage/NewsHomepage'
 import AdviceGenerator from './frontend_mentor_projects/advice_generator/AdviceGenerator'
+import OrderSummary from './frontend_mentor_projects/order_summary/OrderSummary'
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="/results-summary" element={<ResultsSummary />} />
         <Route path="/news-homepage" element={<NewsHomepage />} />
         <Route path="/advice-generator" element={<AdviceGenerator />} />
+        <Route path="/order-summary" element={<OrderSummary />} />
       </Routes>
     </div>
   )

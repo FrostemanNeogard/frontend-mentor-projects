@@ -8,15 +8,18 @@ export default function OrderSummary() {
   return (
     <div className="order-summary-container">
 
-      <picture id="full-screen-background-image">
-        <source 
-          srcSet={`${DekstopBackgroundPattern} 2x, ${MobileBackgroundPattern} 1x`}
-          media='(max-width: 600px)'
-        />
-        <img
-          src={MobileBackgroundPattern} alt="Sine wave pattern"
-        />
-      </picture>
+      <div className="full-screen-background-image">
+
+        <picture>
+          <source 
+            srcSet={`${DekstopBackgroundPattern} 2x, ${MobileBackgroundPattern} 1x`}
+            media='(max-width: 600px)'
+          />
+          <img
+            src={MobileBackgroundPattern} alt="Sine wave pattern"
+          />
+        </picture>
+      </div>
 
       <main className='order-summary'>
         <img src={IllustrationHero} alt="Person dancing in front of city skyline at night." />

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import QRCodePreviewImage from '../assets/project_previews/QR_code.png'
 import ResultsSummaryPewviewImage from '../assets/project_previews/ResultsSummary.png'
 import NewsHomepage from '../assets/project_previews/NewsHomepage.png'
+import AdviceGenerator from '../assets/project_previews/AdviceGenerator.png'
 
 export default function ProjectCards() {
   
@@ -35,6 +36,12 @@ export default function ProjectCards() {
       description: 'My first level 2 Frontend Mentor challenge. This is a slightly more complex layout made with CSS grid, as well as having a mobile-only hamburger menu.',
       url: 'news-homepage',
       imageURL: NewsHomepage
+    },
+    {
+      name: 'Advice Generator',
+      description: 'Another level 2 Frontend Mentor challenge. This uses a very basic API to generate a random piece of advice.',
+      url: 'advice-generator',
+      imageURL: AdviceGenerator
     },
   ]
 

@@ -6,6 +6,7 @@ import Home from './components/Home'
 import NewsHomepage from './frontend_mentor_projects/news_homepage/NewsHomepage'
 import AdviceGenerator from './frontend_mentor_projects/advice_generator/AdviceGenerator'
 import OrderSummary from './frontend_mentor_projects/order_summary/OrderSummary'
+import TipCalculator from './frontend_mentor_projects/tip_calculator/TipCalculator'
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/news-homepage" element={<NewsHomepage />} />
         <Route path="/advice-generator" element={<AdviceGenerator />} />
         <Route path="/order-summary" element={<OrderSummary />} />
+        <Route path="/tip-calculator" element={<TipCalculator />} />
       </Routes>
     </div>
   )
